@@ -24,6 +24,10 @@ class Deal {
     set instrument(value: string) {
         this._instrument = value;
     }
+
+    static newDeal(): Deal {
+        return new Deal('', new Exchange(''));
+    }
 }
 
 

@@ -25,6 +25,10 @@ var Deal = (function () {
         enumerable: true,
         configurable: true
     });
+
+    Deal.newDeal = function () {
+        return new Deal('', new Exchange(''));
+    };
     return Deal;
 })();
 

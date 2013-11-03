@@ -1,3 +1,5 @@
+/// <reference path="separatingmodule.ts" />
+
 module app {
     import Log = app.tools.utils.Logger;
 
@@ -16,17 +18,31 @@ module app {
 
 }
 
+module common {
+
+    export interface IConfig {
+        siteUrl: string;
+        timeout: number;
+        logger: app.tools.utils.Logger;
+    };
+
+ 
+    export function config ():IConfig {
+        return {
+            siteUrl: 'App',
+            timeout: 10,
+            logger: new app.tools.utils.Logger()
+        }
+    };
+
+}
+
 module app {
     export interface IAppViewModal { }
 }
 
-module app.tools.utils {
-    export class Logger {
-        log(message: string): void {
-            console.log(message);
-        }
-    }
-}
+
+var config = common.config();
 
 var modal = new app.AppViewModal();
 var logger = new app.tools.utils.Logger(); // this way, the namespace is too long, we can shorten the namespace by import

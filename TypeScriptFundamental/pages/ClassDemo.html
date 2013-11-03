@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    
+    <script src="../scripts/ClassDemo.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var deal = new Deal('Money Market Deal', new Exchange('chicgo exchange'));
+            alert(deal.instrument);
+            alert(deal.getExchange().exchangeName);
+        });
+
+    </script>
+</body>
+</html>

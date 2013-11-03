@@ -57,12 +57,92 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="scripts\helloworld.ts" />
+    <Content Include="pages\ClassDemo.html" />
+    <Content Include="pages\ExtendTypeDemo.html" />
+    <Content Include="pages\helloworld.html" />
+    <Content Include="pages\manipulatingDom.html" />
+    <Content Include="pages\usingExternalLib.html" />
+    <Content Include="pages\usingobjects.html" />
+    <TypeScriptCompile Include="scripts\ClassDemo.ts" />
+    <TypeScriptCompile Include="scripts\app\usingModule.ts" />
+    <Content Include="scripts\app\usingModule.js">
+      <DependentUpon>usingModule.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\app\usingModule.min.js">
+      <DependentUpon>usingModule.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\ClassDemo.js">
+      <DependentUpon>ClassDemo.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\ClassDemo.min.js">
+      <DependentUpon>ClassDemo.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="scripts\ExtendTypeDemo.ts" />
+    <Content Include="scripts\ExtendTypeDemo.js">
+      <DependentUpon>ExtendTypeDemo.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\ExtendTypeDemo.min.js">
+      <DependentUpon>ExtendTypeDemo.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\helloworld.js">
+      <DependentUpon>helloworld.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\helloworld.min.js">
+      <DependentUpon>helloworld.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="scripts\TypeInference.ts" />
+    <Content Include="scripts\knockout-3.0.0.debug.js" />
+    <Content Include="scripts\knockout-3.0.0.js" />
+    <TypeScriptCompile Include="scripts\manipulatingDOM.ts" />
+    <Content Include="scripts\manipulatingDOM.js">
+      <DependentUpon>manipulatingDOM.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\manipulatingDOM.min.js">
+      <DependentUpon>manipulatingDOM.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\TypeInference.js">
+      <DependentUpon>TypeInference.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\TypeInference.min.js">
+      <DependentUpon>TypeInference.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="scripts\UsingExternalLibrary.ts" />
+    <Content Include="scripts\typings\knockout.d.ts" />
+    <Content Include="scripts\UsingExternalLibrary.js">
+      <DependentUpon>UsingExternalLibrary.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\UsingExternalLibrary.min.js">
+      <DependentUpon>UsingExternalLibrary.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="scripts\UsingExternalLibraryWithdefFile.ts" />
+    <Content Include="scripts\UsingExternalLibraryWithdefFile.js">
+      <DependentUpon>UsingExternalLibraryWithdefFile.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\UsingExternalLibraryWithdefFile.min.js">
+      <DependentUpon>UsingExternalLibraryWithdefFile.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="scripts\usingobjects.ts" />
+    <TypeScriptCompile Include="scripts\UsingInterface.ts" />
+    <Content Include="scripts\UsingInterface.js">
+      <DependentUpon>UsingInterface.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\UsingInterface.min.js">
+      <DependentUpon>UsingInterface.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\usingobjects.js">
+      <DependentUpon>usingobjects.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\usingobjects.min.js">
+      <DependentUpon>usingobjects.ts</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

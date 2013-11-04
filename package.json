@@ -1,0 +1,24 @@
+{
+  "name": "TypeScriptFundamental",
+  "version": "0.0.0",
+  "description": "TypeScriptFundamental\r =====================",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-typescript": "~0.2.4"
+  },
+  "devDependencies": {
+    "grunt-contrib-watch": "~0.5.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xujihui1985/TypeScriptFundamental.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "72db7cc35ae1cd38f03950581ffb2e7ae164c60f"
+}

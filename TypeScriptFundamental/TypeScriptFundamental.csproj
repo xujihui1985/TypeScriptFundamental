@@ -66,6 +66,13 @@
     <Content Include="pages\usingobjects.html" />
     <TypeScriptCompile Include="scripts\ClassDemo.ts" />
     <TypeScriptCompile Include="scripts\app\usingModule.ts" />
+    <TypeScriptCompile Include="scripts\app\separatingmodule.ts" />
+    <Content Include="scripts\app\separatingmodule.js">
+      <DependentUpon>separatingmodule.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\app\separatingmodule.min.js">
+      <DependentUpon>separatingmodule.ts</DependentUpon>
+    </Content>
     <Content Include="scripts\app\usingModule.js">
       <DependentUpon>usingModule.ts</DependentUpon>
     </Content>

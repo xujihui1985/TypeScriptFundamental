@@ -1,32 +1,43 @@
 module class_extend_demo {
 
-    interface Deal {
+    export interface Deal {
         dealNumber: number
     };
 
-    interface FutureDeal extends Deal {
+    export interface FutureDeal extends Deal {
         instrument: string;
         exchange: string;
         matureDate: Date;
         contractMonth: number;
     }
 
-    class BaseViewModal {
+    export class BaseViewModal {
 
         _deal: Deal;
+        onbeforeSave: () => void;
+        onafterSave: () => void;
 
         constructor(deal: Deal) {
             this._deal = deal;
         }
 
-        public onbeforeSave(): void { }
-        public onafterSave(): void { }
+        public methodCanbeOverride(): void {
+            console.log(this._deal);
+            console.log('call methodCanbeOverride2 from base class');
+        }
+
+        public 
 
         save(): void {
-            this.onbeforeSave();
+            if (this.onbeforeSave) {
+                this.onbeforeSave();
+            }
             console.log(this._deal);
             console.log('saved');
-            this.onafterSave();
+            if (this.onafterSave) {
+                this.onafterSave();
+            }
+
         }
 
         propertyAccessor(propertyName: string): any {
@@ -36,7 +47,7 @@ module class_extend_demo {
 
     }
 
-    class DealingViewModal extends BaseViewModal {
+    export class DealingViewModal extends BaseViewModal {
 
         constructor(deal: Deal) {
             super(deal);
@@ -46,12 +57,20 @@ module class_extend_demo {
             (<FutureDeal>this._deal).contractMonth = month;
         }
 
-        public onbeforeSave(): void {
-            console.log('on before save')
+        onbeforeSave = () => {
+            console.log('on before save');
         }
-        public onafterSave(): void {
-            console.log('on after save')
+
+        onafterSave = () => {
+            console.log('on after save');
         }
+
+        public methodCanbeOverride(): void {
+            super.methodCanbeOverride();
+            console.log('call from sub');
+
+        }
+
     }
 
     var futureDeal: FutureDeal = {
@@ -63,6 +82,7 @@ module class_extend_demo {
     };
     var future = new DealingViewModal(futureDeal);
     future.calculateContractMonth(5);
+    future.methodCanbeOverride();
     var contracMonth = future.propertyAccessor('contractMonth');
     console.log(contracMonth);
     future.save();
